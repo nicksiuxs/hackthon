@@ -2,9 +2,9 @@ import { Route, Routes } from "react-router";
 import AppProvider from "./context/AppContext";
 
 // Pages
-import Home from "./pages/Home";
-import Payment from "./pages/Payment";
-import Register from "./pages/Register";
+import Home from "./pages/Home/Home";
+import Payment from "./pages/Payment/Payment";
+import Register from "./pages/Register/Register";
 
 // components
 import Stepper from "./components/Stepper/Stepper";
@@ -16,8 +16,8 @@ import "./App.css";
 function App() {
   return (
     <AppProvider>
+      <Header />
       <main className="main-content">
-        <Header />
         <Stepper />
         <Routes>
           <Route path="/" element={<Home />} />

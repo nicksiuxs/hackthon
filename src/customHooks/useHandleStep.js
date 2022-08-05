@@ -15,6 +15,7 @@ const useHandleStep = ({ newStep, dispatch }) => {
     const { state: { step } } = useAppContext()
     useEffect(() => {
         navigate(stepRouteMapping[step - 1]);
+        // eslint-disable-next-line
     }, [step])
 
     const handleStep = () => {

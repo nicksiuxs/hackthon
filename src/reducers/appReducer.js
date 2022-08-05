@@ -9,7 +9,12 @@ const appInitialState = {
         endHour: "",
         capacity: 0
     },
-    package: {},
+    templates: {
+        isFetching: false,
+        listTemplates: [],
+        error: null
+    },
+    template: {},
     step: 1,
     labels: labels,
     host_information: {
@@ -45,7 +50,6 @@ const appInitialState = {
 const appReducer = (state, action) => {
     switch (action.type) {
         case TYPES.CHANGE_STEP: {
-            console.log(action)
             if (action.payload < 1) {
                 return { ...state, step: 1 }
             }
@@ -53,6 +57,15 @@ const appReducer = (state, action) => {
                 return { ...state, step: 3 }
             }
             return { ...state, step: action.payload }
+        }
+        case TYPES.REQUEST_TEMPLATES: {
+            return { ...state, templates: { ...state.templates, isFetching: true } }
+        }
+        case TYPES.REQUEST_TEMPLATES_SUCCESS: {
+            return { ...state, templates: { ...state.templates, isFetching: false, listTemplates: action.payload } }
+        }
+        case TYPES.REQUEST_TEMPLATES_ERROR: {
+            return { ...state, templates: { ...state.templates, isFetching: false, error: action.payload } }
         }
         default:
             return state;

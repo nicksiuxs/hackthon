@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useAppContext } from "../../../../context/AppContext";
+import useAppContext from "../../customHooks/useAppContext"
 
 // style
 import './Step.css';
@@ -11,8 +11,8 @@ const Step = ({ label, stepNumber }) => {
 
   return (
     <span
-	className={`step ${isSelected ? "-selected" : ""}`}
-	onClick={() => handleStep(stepNumber)}>
+      className={`step ${isSelected ? "-selected" : ""}`}
+      onClick={() => handleStep(stepNumber)}>
       {label}
     </span>
   );

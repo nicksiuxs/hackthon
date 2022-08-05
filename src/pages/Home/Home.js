@@ -1,6 +1,6 @@
 import React from 'react';
 import AvailabilityFilters from './components/AvailabilityFilters/AvailabilityFilters';
-import TemplateResults from './components/TemplateResults';
+import TemplateResults from './components/TemplateResults/TemplateResults';
 import './Home.css';
 
 const Home = () => {

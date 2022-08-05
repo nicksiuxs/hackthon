@@ -6,8 +6,8 @@ import useAppContext from "./useAppContext";
 
 const stepRouteMapping = [
     '/',
-    '/payment',
-    '/register'
+    '/register',
+    '/payment'
 ]
 
 const useHandleStep = ({ newStep, dispatch }) => {

@@ -6,7 +6,7 @@ const appInitialState = {
         category: "",
         date: "",
         startHour: "",
-        endOur: "",
+        endHour: "",
         capacity: 0
     },
     package: {},

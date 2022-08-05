@@ -2,11 +2,42 @@
     --main-bg-header-color: #434141;
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
 }
 
-.main-content{
+.main-content {
     display: flex;
     flex-direction: column;
+    padding: 1.3rem;
+}
+
+/* panels */
+.panel {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    border-radius: 10px;
+}
+
+.panel-50 {
+    width: 50%;
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1.563rem;
+}
+
+/* Mobile breackpoint */
+@media screen and (max-width: 500px) {
+    .panel-50 {
+        width: 100%;
+    }
+
+    .panel-container {
+        flex-direction: column;
+    }
 }

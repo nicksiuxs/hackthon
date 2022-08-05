@@ -1,0 +1,10 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-bg-header-color);
+    padding: 1.1563rem 1.25rem 1.1563rem 1.25rem;
+    position: absolute;
+    z-index: 10;
+    top:0
+}

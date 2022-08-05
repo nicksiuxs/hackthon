@@ -17,7 +17,7 @@ const appInitialState = {
     template: {},
     step: 1,
     labels: labels,
-    host_information: {
+    hostInformation: {
         firstName: "",
         lastName: "",
         email: "",

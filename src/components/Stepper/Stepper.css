@@ -1,0 +1,4 @@
+div.stepper {
+    display: flex;
+    gap: 1rem;
+}

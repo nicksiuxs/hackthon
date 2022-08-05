@@ -1,4 +1,5 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AppContext = createContext();
 
@@ -6,8 +7,16 @@ const useAppContext = () => {
     return useContext(AppContext);
 }
 
+const stepRouteMapping = [
+    '/',
+    '/payment',
+    '/register'
+]
+
 const AppProvider = ({ children }) => {
     const [step, setStep] = useState(1);
+    // navigation handler
+    const navigate = useNavigate();
 
     // esta funcion se puede cambiar
     const handleStep = (newStep) => {
@@ -18,7 +27,13 @@ const AppProvider = ({ children }) => {
             return setStep(3)
         }
         setStep(newStep)
+        
     }
+
+    useEffect(() => {
+      navigate(stepRouteMapping[step - 1]);
+    }, [step])
+    
 
     return <AppContext.Provider value={{ step, handleStep }}>{children}</AppContext.Provider>
 }

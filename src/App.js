@@ -6,9 +6,13 @@ import Home from "./pages/Home";
 import Payment from "./pages/Payment";
 import Register from "./pages/Register";
 
+// components
+import Stepper from "./components/Stepper/Stepper";
+
 function App() {
   return (
     <AppProvider>
+      <Stepper />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

@@ -1,4 +1,6 @@
-div.stepper {
+.stepper {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    padding-top: 1.5625rem
 }

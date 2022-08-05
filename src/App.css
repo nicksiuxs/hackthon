@@ -1,0 +1,12 @@
+:root {
+    --main-bg-header-color: #434141;
+}
+
+body{
+    margin:0;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+}

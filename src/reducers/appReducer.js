@@ -1,4 +1,5 @@
 import labels from "../labels";
+import TYPES from "./types";
 
 const appInitialState = {
     filter: {
@@ -43,6 +44,16 @@ const appInitialState = {
 
 const appReducer = (state, action) => {
     switch (action.type) {
+        case TYPES.CHANGE_STEP: {
+            console.log(action)
+            if (action.payload < 1) {
+                return { ...state, step: 1 }
+            }
+            else if (action.payload > 3) {
+                return { ...state, step: 3 }
+            }
+            return { ...state, step: action.payload }
+        }
         default:
             return state;
     }

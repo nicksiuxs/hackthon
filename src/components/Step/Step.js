@@ -1,18 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useAppContext } from "../../../../context/AppContext";
+
+import useAppContext from "../../customHooks/useAppContext"
+import useHandleStep from "../../customHooks/useHandleStep";
 
 // style
 import './Step.css';
 
 const Step = ({ label, stepNumber }) => {
-  const { step, handleStep } = useAppContext();
+  const { state, dispatch } = useAppContext();
+  const { step } = state;
+
   const isSelected = step === stepNumber;
 
+  const { handleStep } = useHandleStep({ newStep: stepNumber, dispatch });
   return (
     <span
-	className={`step ${isSelected ? "-selected" : ""}`}
-	onClick={() => handleStep(stepNumber)}>
+      className={`step ${isSelected ? "-selected" : ""}`}
+      onClick={() => handleStep()}>
       {label}
     </span>
   );

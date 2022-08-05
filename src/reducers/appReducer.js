@@ -4,7 +4,7 @@ import TYPES from "./types";
 const appInitialState = {
     filter: {
         category: "",
-        date: "",
+        dateSelected: "",
         startHour: "",
         endHour: "",
         capacity: 0

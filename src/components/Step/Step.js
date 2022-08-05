@@ -12,14 +12,16 @@ const Step = ({ label, stepNumber }) => {
   const { step } = state;
 
   const isSelected = step === stepNumber;
-
+  const isCompleted = step > stepNumber;
   const { handleStep } = useHandleStep({ newStep: stepNumber, dispatch });
   return (
-    <span
-      className={`step ${isSelected ? "-selected" : ""}`}
-      onClick={() => handleStep()}>
+    <div
+      className="step-container"
+    >
+      <button onClick={() => handleStep()} className={`step ${isSelected ? "-selected" : isCompleted ? "-completed" : ""}`}>
+      </button>
       {label}
-    </span>
+    </div>
   );
 };
 

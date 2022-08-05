@@ -3,13 +3,15 @@ import React from 'react';
 import './Stepper.css';
 // components
 import Step from '../Step/Step';
+import labels from '../../labels';
+
 
 const Stepper = () => {
   return (
     <div className='stepper'>
-      <Step label="Home" stepNumber={1} />
-      <Step label="Payment" stepNumber={2} />
-      <Step label="Register" stepNumber={3} />
+      <Step label={labels.check_availability} stepNumber={1} />
+      <Step label={labels.registration} stepNumber={2} />
+      <Step label={labels.payment} stepNumber={3} />
     </div>
   )
 }

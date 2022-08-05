@@ -1,0 +1,7 @@
+.step {
+    cursor: pointer;
+}
+
+.step.-selected {
+    color: blue;
+}

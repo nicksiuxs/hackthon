@@ -3,7 +3,7 @@ import TYPES from '../reducers/types';
 import fetchSalesforce from '../utils/callApi'
 import useAppContext from './useAppContext';
 
-const ENDPOINT = "/pos/v1/rentalPackage";
+const ENDPOINT = "/pos/v1/rentalTemplate";
 
 const useFetchTemplates = () => {
 
@@ -11,9 +11,9 @@ const useFetchTemplates = () => {
 
     const fetchTemplates = async () => {
         try {
-            dispatch({ action: TYPES.REQUEST_TEMPLATES })
+            dispatch({ type: TYPES.REQUEST_TEMPLATES })
             const data = await fetchSalesforce(ENDPOINT);
-            dispatch({ action: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: data })
+            dispatch({ type: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: data })
         } catch (e) {
             dispatch({ action: TYPES.REQUEST_TEMPLATES_ERROR, payload: e })
         }

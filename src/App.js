@@ -8,16 +8,23 @@ import Register from "./pages/Register";
 
 // components
 import Stepper from "./components/Stepper/Stepper";
+import Header from "./components/Header/Header";
+
+// styles
+import "./App.css";
 
 function App() {
   return (
     <AppProvider>
-      <Stepper />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/payment" element={<Payment />} />
-      </Routes>
+      <main className="main-content">
+        <Header />
+        <Stepper />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/payment" element={<Payment />} />
+        </Routes>
+      </main>
     </AppProvider>
   );
 }

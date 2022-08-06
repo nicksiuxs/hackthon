@@ -47,7 +47,7 @@ const AvailabilityFilters = () => {
         <Input id={"capacity"} type="number" handleOnchange={handleOnChange} value={capacity} />
       </div>
 
-      <button className="btn" onClick={() => fetchTemplates()}>magic</button>
+      <button className="btn" onClick={() => fetchTemplates()}>{labels.search}</button>
 
     </div>
   )

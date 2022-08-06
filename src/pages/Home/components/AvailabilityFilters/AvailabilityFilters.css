@@ -1,4 +1,11 @@
 .filter{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
+    gap: .3rem;
+}
+
+.filter b {
+    color: #2D2F2F;
+    font-weight: 500;
 }

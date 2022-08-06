@@ -27,33 +27,33 @@ const ListOfTemplates = () => {
   );
 
   return (
-    <div className="panel panel-50">
-      {isFetching ? (
-        <Spinner />
-      ) : 
-      !!error ? (
-        <ErrorMessage />
-      ): (
+    <div className="panel panel-50 list-of-templates">
+      {isFetching ? <Spinner /> :
+      !!error ? <ErrorMessage /> : (
         <>
           <b>5. </b> {labels.choose_the_package}
+          <div className="template-container"></div>
           {
-            listTemplates.length > 0 ? 
-            listTemplates.map((template) => {
-              const { Id, cost, description, location, startDate, endDate } =
-                template;
-              return (
-                <Template
-                  key={Id}
-                  Id={Id}
-                  timeFrame={formatDate(startDate, endDate)}
-                  capacity={location.capacity}
-                  price={cost}
-                  description={description}
-                />
-              );
-            }) : (
-              <EmptyFormMessage />
-            )
+            listTemplates.length > 0 ?
+            <div className="template-container">
+              {
+                listTemplates.map((template) => {
+                  const { Id, cost, description, location, startDate, endDate } =
+                    template;
+                  return (
+                    <Template
+                      key={Id}
+                      Id={Id}
+                      timeFrame={formatDate(startDate, endDate)}
+                      capacity={location.capacity}
+                      price={cost}
+                      description={description}
+                    />
+                  );
+                })
+              }
+            </div>
+             : <EmptyFormMessage />
           }
         </>
       )}

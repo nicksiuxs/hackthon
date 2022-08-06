@@ -16,7 +16,7 @@ const Template = (props) => {
   return (
     <button className="template" onClick={handleSelectTemplate}>
       <figure className="image">
-        <img src="/no-photo.png" alt="template img" />
+        <img src="/default_image.png" alt="template img" />
       </figure>
       <div className="info">
         <div className="fields">
@@ -30,7 +30,7 @@ const Template = (props) => {
           </span>
           <span>
             <b>{labels.price} </b>
-            {price}
+            ${price}
           </span>
         </div>
         <p dangerouslySetInnerHTML={{ __html: description }} className="description"></p>

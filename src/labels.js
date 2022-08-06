@@ -49,6 +49,10 @@ const labels = {
     to: "to",
     total: "Total",
     zip: "Zip/Code",
+    error_select_category: "Please select a category",
+    error_select_date: "Please select a valid date",
+    error_time_range: "Please select a correct range",
+    error_capacity: "Please the guest must be greater than or equal to zero",
 }
 
 export default labels

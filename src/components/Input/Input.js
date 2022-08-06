@@ -2,7 +2,7 @@ import React from "react";
 import "./Input.css";
 
 const Input = (props) => {
-  const { id, type, label, value, handleOnchange, className } = props;
+  const { id, type, label, value, handleOnchange, className, minValue } = props;
   return (
     <div className="input">
       <div>
@@ -16,6 +16,7 @@ const Input = (props) => {
         type={type || "text"}
         value={value}
         onChange={handleOnchange}
+        {...minValue !== undefined ? { min: minValue } : {}}
       />
     </div>
   );

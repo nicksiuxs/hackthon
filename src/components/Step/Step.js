@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import useAppContext from "../../customHooks/useAppContext"
+import useAppContext from "../../customHooks/useAppContext";
 import useHandleStep from "../../customHooks/useHandleStep";
 
 // style
-import './Step.css';
+import "./Step.css";
 
 const Step = ({ label, stepNumber }) => {
   const { state, dispatch } = useAppContext();
@@ -15,12 +15,25 @@ const Step = ({ label, stepNumber }) => {
   const isCompleted = step > stepNumber;
   const { handleStep } = useHandleStep({ newStep: stepNumber, dispatch });
   return (
-    <div
-      className="step-container"
-    >
-      <button onClick={() => handleStep()} className={`step ${isSelected ? "-selected" : isCompleted ? "-completed" : ""}`}>
-      </button>
-      {label}
+    <div className="step-container">
+      <div className="indicator">
+        {stepNumber > 1 && (
+          <div
+            className={`bar ${isSelected || isCompleted ? "-blue" : ""}`}
+          />
+        )}
+        <button
+          onClick={() => handleStep()}
+          className={`step ${
+            isSelected ? "-selected" : isCompleted ? "-completed" : ""
+          }`}
+        >
+          { isCompleted &&
+            <img src="/icons/white_check.png" alt="white check" />
+          }
+          <span>{label}</span>
+        </button>
+      </div>
     </div>
   );
 };

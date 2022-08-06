@@ -5,8 +5,8 @@ const appInitialState = {
     filter: {
         category: "",
         dateSelected: "",
-        startHour: "",
-        endHour: "",
+        startDate: "",
+        endDate: "",
         capacity: 0
     },
     templates: {

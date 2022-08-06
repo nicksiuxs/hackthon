@@ -15,7 +15,7 @@ const CustomCalendar = ({ handleOnChangeCalendar }) => {
     }
 
     return (
-        <Calendar bordered onSelect={handleOnChange} menuautowidth="true" />
+        <Calendar compact bordered onSelect={handleOnChange} menuautowidth="true" />
     )
 }
 

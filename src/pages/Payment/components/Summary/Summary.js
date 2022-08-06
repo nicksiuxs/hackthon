@@ -2,6 +2,7 @@ import React from "react";
 import Discounts from "./components/Discounts/Discounts";
 import useAppContext from "../../../../customHooks/useAppContext";
 import "./Summary.css";
+import { formatDate, getTotalHours } from "../../../../utils/formatDates";
 
 const Summary = () => {
   const {
@@ -12,34 +13,40 @@ const Summary = () => {
     <div className="totals">
       <div className="item">
         <span>{labels.subtotal}</span>
-        <span>{summary.subtotal}</span>
+        <span>${summary.subtotal}</span>
       </div>
       <div className="item">
         <span>{labels.total}</span>
-        <span>{summary.total}</span>
+        <span>${summary.total}</span>
       </div>
     </div>
   );
 
-  const RentalInfo = () => (
-    <div className="rental">
-      <div className="date">
-        <img src="/icons/calendar.svg" alt="calendar" />
-        <p>Tuesday April 8th, 2022 - 7:00am - 8:00am</p>
+  const RentalInfo = () => {
+    const {
+      template: { startDate, endDate, location, cost },
+    } = summary;
+
+    return (
+      <div className="rental">
+        <div className="date">
+          <img src="/icons/calendar.svg" alt="calendar" />
+          <p>{formatDate(startDate, endDate)}</p>
+        </div>
+        <div className="item">
+          <span>Street 54</span>
+        </div>
+        <div className="item">
+          <span>{getTotalHours(startDate, endDate)} Hour</span>
+          <span>${cost}</span>
+        </div>
+        <div className="item">
+          <span>{labels.capacity + " " + location.capacity}</span>
+          <span>$0.0</span>
+        </div>
       </div>
-      <div className="item">
-        <span className="address">Street 54</span>
-      </div>
-      <div className="item">
-        <span>1 Hour</span>
-        <span>$500.00</span>
-      </div>
-      <div className="item">
-        <span>{labels.capacity} 30</span>
-        <span>$0.0</span>
-      </div>
-    </div>
-  )
+    );
+  };
 
   return (
     <div className="panel panel-30 summary">
@@ -47,7 +54,7 @@ const Summary = () => {
       <div className="summary">
         <h3 className="title">{labels.summary}</h3>
         <RentalInfo />
-        <Totals/>
+        <Totals />
       </div>
     </div>
   );

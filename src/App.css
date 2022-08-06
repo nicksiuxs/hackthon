@@ -39,6 +39,16 @@ button.btn.-small {
     font-size: 1.25rem;
 }
 
+.navigation-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    position: relative;
+}
+
 /* panels */
 .panel {
     border: 1px solid #C4C4C4;

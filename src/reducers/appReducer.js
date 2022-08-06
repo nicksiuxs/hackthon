@@ -41,7 +41,7 @@ const appInitialState = {
         includeFee: false,
     },
     summary: {
-        packageId: "",
+        template: null,
         subtotal: 0,
         total: 0
     }
@@ -79,7 +79,8 @@ const appReducer = (state, action) => {
         case TYPES.SELECT_TEMPLATE: {
             const idTemplate = action.payload
             const template = state.templates.listTemplates.find(template => template.Id === idTemplate)
-            return { ...state, template, step: 2 }
+            const newTotal = template.cost;
+            return { ...state, template, step: 2, summary: { template, subtotal: newTotal, total: newTotal } }
         }
         default:
             return state;

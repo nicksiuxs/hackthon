@@ -3,12 +3,12 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className='footer'>
-        <span>2022 Veevart Museum</span>
-        <select name="language">
-            <option value="1">English</option>
-        </select>
-    </div>
+    <footer className='footer'>
+      <span>2022 Veevart Museum</span>
+      <select name="language">
+        <option value="1">English</option>
+      </select>
+    </footer>
   )
 }
 

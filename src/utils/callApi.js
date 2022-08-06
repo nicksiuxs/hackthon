@@ -13,7 +13,8 @@ const fetchSalesforce = async (endPoint, options) => {
         headers: {
             ...options?.headers,
             'Authorization': `Bearer ${accessToken}`
-        }
+        },
+        ...options
     })
     return await response.json();
 }

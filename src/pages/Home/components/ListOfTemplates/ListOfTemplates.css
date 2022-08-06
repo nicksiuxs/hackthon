@@ -1,0 +1,24 @@
+.message-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.message {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    padding: .5rem;
+    text-align: center;
+    margin: auto;
+}
+
+.message.-info {
+    background-color: #D6EAFF;
+    color: var(--selected-bg-button);
+}
+
+.message.-error {
+    background-color: #ffb9b9;
+    color: rgb(166, 36, 36);
+}

@@ -20,7 +20,7 @@ const useFetchTemplates = () => {
             const mappedData = templateMappingArray(data);
             dispatch({ type: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: mappedData })
         } catch (e) {
-            dispatch({ action: TYPES.REQUEST_TEMPLATES_ERROR, payload: e })
+            dispatch({ type: TYPES.REQUEST_TEMPLATES_ERROR, payload: e })
         }
     }
 

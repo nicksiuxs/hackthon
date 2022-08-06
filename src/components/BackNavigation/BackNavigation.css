@@ -1,0 +1,11 @@
+.back-navigation {
+    position: absolute;
+    left: 0;
+    color: #1889FF;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+    cursor: pointer;
+}

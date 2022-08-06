@@ -13,13 +13,17 @@ import Header from "./components/Header/Header";
 // styles
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import BackNavigation from "./components/BackNavigation/BackNavigation";
 
 function App() {
   return (
     <AppProvider>
       <Header />
       <main className="main-content">
-        <Stepper />
+        <div className="navigation-controls">
+          <BackNavigation/>
+          <Stepper />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />

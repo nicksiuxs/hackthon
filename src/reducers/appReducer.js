@@ -15,7 +15,7 @@ const appInitialState = {
         error: null
     },
     template: {},
-    step: 2,
+    step: 1,
     labels: labels,
     hostInformation: {
         firstName: "",
@@ -72,6 +72,10 @@ const appReducer = (state, action) => {
         }
         case TYPES.UPDATE_PAYMENT_INFORMATION: {
             return { ...state, payment: { ...state.payment, ...action.payload } }
+        }
+        case TYPES.UPDATE_FILTERS: {
+            console.log("entre")
+            return { ...state, filter: { ...state.filter, ...action.payload } }
         }
         default:
             return state;

@@ -21,7 +21,7 @@ const HostInformation = () => {
 
     return (
         <div className="panel panel-70">
-            <h2>{labels.package_information}</h2>
+            <h2 className='title'>{labels.package_information}</h2>
             <form onSubmit={handleOnSubmit}>
                 <Input id={"firstName"} value={firstName} label={labels.first_name} handleOnchange={handleOnChangeInput} />
                 <Input id={"lastName"} value={lastName} label={labels.last_name} handleOnchange={handleOnChangeInput} />

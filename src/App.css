@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
 :root {
     --main-bg-header-color: #434141;
     --defaul-bg-button: #D9D9D9;
@@ -9,12 +9,22 @@
 
 body {
     margin: 0;
+
+    color: #3D3D3D;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     padding: 1.3rem;
+}
+
+.title {
+    color: #212121;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 /* panels */

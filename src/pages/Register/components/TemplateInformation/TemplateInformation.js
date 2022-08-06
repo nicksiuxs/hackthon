@@ -54,7 +54,6 @@ const TemplateInformation = () => {
     state: { labels, template },
   } = useAppContext();
   const {
-    street,
     startDate,
     endDate,
     location : { capacity },
@@ -69,29 +68,29 @@ const TemplateInformation = () => {
       <figure className="template-image">
         <img src={img || "/no-photo.png"} alt="package information" />
       </figure>
-      <h2>{labels.package_information}</h2>
+      <h2 className="title">{labels.package_information}</h2>
       <p>
-        <div>{street || "Street 54-23"}</div>
-        <div>
+        <div className="address">Street 54-23</div>
+        <div className="date">
           {formatDate(startDate, endDate) ||
             "Tuesday April 8th, 2022 - 8:00am - 9:00am"}{" "}
         </div>
-        <div>
+        <div className="capacity">
           <Avatar />
           {labels.capacity + " " + capacity}
         </div>
       </p>
-      <h3>{labels.cost + ": " + cost}</h3>
+      <div>{labels.cost + ": $" + cost}</div>
       <p>
-        <h3>{labels.description}</h3>
+        <span className="section-title">{labels.description}</span>
         <div dangerouslySetInnerHTML={{ __html: richDescription }} />
       </p>
       <p>
-        <h3>{labels.disclaimers}</h3>
+        <span className="section-title">{labels.disclaimers}</span>
         {disclaimers}
       </p>
       <p>
-        <h3>{labels.insurance_information}</h3>
+        <span className="section-title">{labels.insurance_information}</span>
         {insurance}
       </p>
     </div>

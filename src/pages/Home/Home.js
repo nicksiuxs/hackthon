@@ -1,6 +1,6 @@
 import React from 'react';
 import AvailabilityFilters from './components/AvailabilityFilters/AvailabilityFilters';
-import TemplateResults from './components/TemplateResults/TemplateResults';
+import ListOfTemplates from './components/ListOfTemplates/ListOfTemplates';
 import './Home.css';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className='panel-container'>
             <AvailabilityFilters />
-            <TemplateResults />
+            <ListOfTemplates />
         </div>
     )
 }

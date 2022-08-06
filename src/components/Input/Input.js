@@ -6,8 +6,8 @@ const Input = (props) => {
   return (
     <div className="input">
       <div>
-        {!props.required && <span className="required">*</span>}&nbsp;
-        {label ? <label htmlFor={id}>{label}</label> : null}
+        {props.required && <span className="required">* </span>}
+        {label && <label htmlFor={id}>{label}</label>}
       </div>
       <input
         id={id}

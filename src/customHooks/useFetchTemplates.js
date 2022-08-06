@@ -7,12 +7,16 @@ const ENDPOINT = "/pos/v1/rentalTemplate";
 
 const useFetchTemplates = () => {
 
-    const { dispatch } = useAppContext()
+    const { state: { filter }, dispatch } = useAppContext()
+    const { category, dateSelected, startDate, endDate, capacity } = filter;
+    const formatEndpoint = () => {
+        return `${ENDPOINT}?category=${category}&startDate=${dateSelected + " " + startDate + ":00"}&endDate=${dateSelected + " " + endDate + ":00"}&capacity=${capacity}`
+    }
 
     const fetchTemplates = async () => {
         try {
             dispatch({ type: TYPES.REQUEST_TEMPLATES })
-            const data = await fetchSalesforce(ENDPOINT);
+            const data = await fetchSalesforce(formatEndpoint());
             dispatch({ type: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: data })
         } catch (e) {
             dispatch({ action: TYPES.REQUEST_TEMPLATES_ERROR, payload: e })

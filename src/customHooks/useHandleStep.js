@@ -12,17 +12,29 @@ const stepRouteMapping = [
 
 const useHandleStep = ({ newStep, dispatch }) => {
     const navigate = useNavigate();
-    const { state: { step } } = useAppContext()
+    const { state: { step, template } } = useAppContext()
     useEffect(() => {
         navigate(stepRouteMapping[step - 1]);
         // eslint-disable-next-line
     }, [step])
 
     const handleStep = () => {
+        if (!couldMoveTo()) return;
+
         dispatch({ type: TYPES.CHANGE_STEP, payload: newStep })
     }
 
-    return { handleStep }
+    const couldMoveTo = () => {
+        if (newStep === 2 && Object.keys(template).length === 0) {
+            return false;
+        }
+        if (newStep === 3 && Object.keys(template).length === 0) {
+            return false;
+        }
+        return true;
+    }
+
+    return { handleStep, couldMoveTo: couldMoveTo() }
 }
 
 export default useHandleStep

@@ -99,7 +99,12 @@ button.btn.-small {
     display: block;
     color: red;
     font-size: 12px;
+    margin-bottom: 5px;
 }   
+
+.margin-bottom-0{
+    margin-bottom: 0;
+}
 
 @media screen and (max-width: 900px){
     .navigation-controls {

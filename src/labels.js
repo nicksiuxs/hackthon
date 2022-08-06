@@ -53,6 +53,9 @@ const labels = {
     error_select_date: "Please select a valid date",
     error_time_range: "Please select a correct range",
     error_capacity: "Please the guest must be greater than or equal to zero",
+    error_first_name: "Please fill the first name",
+    error_last_name: "Please fill the last name",
+    error_email: "Please the email is required"
 }
 
 export default labels

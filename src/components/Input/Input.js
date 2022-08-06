@@ -2,9 +2,9 @@ import React from "react";
 import "./Input.css";
 
 const Input = (props) => {
-  const { id, type, label, value, handleOnchange, className, minValue } = props;
+  const { id, type, label, value, handleOnchange, className, minValue, errorClass } = props;
   return (
-    <div className="input">
+    <div className={"input " + errorClass}>
       <div>
         {props.required && <span className="required">* </span>}
         {label && <label htmlFor={id}>{label}</label>}

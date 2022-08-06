@@ -50,12 +50,12 @@ const AvailabilityFilters = () => {
       <div className='filter'>
         <label htmlFor="startDate"><b>3.</b> {labels.select_time_frame}</label>
         <TimeFrame onChange={handleOnChange} startDate={startDate} endDate={endDate} />
-        {!isValidate && startDate <= endDate ? <span className="error-message">{labels.error_time_range}</span> : null}
+        {!isValidate && startDate >= endDate ? <span className="error-message">{labels.error_time_range}</span> : null}
       </div>
       <div className='filter'>
         <label htmlFor="capacity"><b>4.</b> {labels.number_of_guest}</label>
         <Input id={"capacity"} type="number" handleOnchange={handleOnChange} value={capacity} minValue={0} />
-        {!isValidate && capacity >= 0 ? <span className="error-message">{labels.error_capacity}</span> : null}
+        {!isValidate && capacity < 0 ? <span className="error-message">{labels.error_capacity}</span> : null}
       </div>
 
       <button className="btn">{labels.search}</button>

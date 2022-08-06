@@ -1,13 +1,23 @@
-import React from 'react';
+import React from "react";
 import "./Input.css";
 
-const Input = ({ id, type, label, value, handleOnchange }) => {
-    return (
-        <div className="input">
-            {label ? <label htmlFor={id}>{label}</label> : null}
-            <input id={id} name={id} type={type || "text"} value={value} onChange={handleOnchange} />
-        </div>
-    )
-}
+const Input = (props) => {
+  const { id, type, label, value, handleOnchange } = props;
+  return (
+    <div className="input">
+      <div>
+        {!props.required && <span className="required">*</span>}&nbsp;
+        {label ? <label htmlFor={id}>{label}</label> : null}
+      </div>
+      <input
+        id={id}
+        name={id}
+        type={type || "text"}
+        value={value}
+        onChange={handleOnchange}
+      />
+    </div>
+  );
+};
 
-export default Input
+export default Input;

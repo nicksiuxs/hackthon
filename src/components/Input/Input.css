@@ -1,4 +1,16 @@
 .input{
     display: flex;
     flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 2.5rem;
+}
+
+.input input {
+    height: 2.5rem;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+}
+
+.input .required {
+    color: #C64B40;
 }

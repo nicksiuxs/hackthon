@@ -4,6 +4,7 @@
     --defaul-bg-button: #D9D9D9;
     --selected-bg-button: #1889FF;
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 body {

@@ -7,6 +7,7 @@ const CustomCalendar = ({ handleOnChangeCalendar }) => {
 
     useEffect(() => {
         handleOnChange(new Date())
+        // eslint-disable-next-line
     }, [])
 
     const handleOnChange = (date) => {

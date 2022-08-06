@@ -1,14 +1,12 @@
-import React from 'react'
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import Summary from './components/Summary/Summary';
+import ClientInformation from './components/ClientInformation/ClientInformation';
+
 const Payment = () => {
     return (
-        <div>
-            <h1>Payment</h1>
-            <NavLink
-                to="/"
-            >
-                Home
-            </NavLink>
+        <div className='panel-container'>
+            <ClientInformation/>
+            <Summary />
         </div>
     )
 }

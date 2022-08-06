@@ -38,7 +38,7 @@ const appInitialState = {
         cardNumber: "",
         expDate: "",
         cvc: "",
-        thanks: false,
+        includeFee: false,
     },
     summary: {
         packageId: "",
@@ -69,6 +69,9 @@ const appReducer = (state, action) => {
         }
         case TYPES.UPDATE_HOST_INFORMATION: {
             return { ...state, hostInformation: action.payload }
+        }
+        case TYPES.UPDATE_PAYMENT_INFORMATION: {
+            return { ...state, payment: { ...state.payment, ...action.payload } }
         }
         default:
             return state;

@@ -1,0 +1,11 @@
+.timeframe {
+    border-radius: 5px;
+    border: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.timeframe input[type="time"] {
+    border: none;
+}

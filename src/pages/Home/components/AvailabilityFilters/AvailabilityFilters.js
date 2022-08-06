@@ -6,6 +6,7 @@ import TYPES from '../../../../reducers/types';
 import "./AvailabilityFilters.css";
 import useFetchTemplates from '../../../../customHooks/useFetchTemplates';
 import CustomCalendar from '../CustomCalendar/CustomCalendar';
+import TimeFrame from '../../../../components/TimeFrame/TimeFrame';
 
 const AvailabilityFilters = () => {
   const { state: { labels, filter }, dispatch } = useAppContext();
@@ -36,11 +37,7 @@ const AvailabilityFilters = () => {
       </div>
       <div className='filter'>
         <label htmlFor="startDate"><b>3.</b> {labels.select_time_frame}</label>
-        <div>
-          <input type="time" id="startDate" name="startDate" onChange={handleOnChange} value={startDate} />
-          <span>to</span>
-          <input type="time" id="endDate" name="endDate" onChange={handleOnChange} value={endDate} />
-        </div>
+        <TimeFrame onChange={handleOnChange} startDate={startDate} endDate={endDate} />
       </div>
       <div className='filter'>
         <label htmlFor="capacity"><b>4.</b> {labels.number_of_guest}</label>

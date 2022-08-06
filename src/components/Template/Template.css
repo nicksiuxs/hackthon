@@ -10,6 +10,12 @@
     gap: .5rem;
 }
 
+.template .description {
+    color: #6A6969;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
 .template .image{
     width: 20rem;
 }
@@ -18,4 +24,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.template .info .fields {
+    display: flex;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 950px){
+    .template .info .fields {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

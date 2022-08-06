@@ -1,13 +1,15 @@
 .template {
     cursor: pointer;
-    padding: 0.625rem 1rem;
+    padding: 0.625rem 0.9375rem;
     border: 1px solid #C4C4C4;
     border-radius: 5px;
     min-height: 5rem;
 
     display: flex;
     flex-direction: row;
-    gap: .5rem;
+    justify-content: space-between;
+    background: none;
+    width: 100%;
 }
 
 .template .description {
@@ -17,7 +19,10 @@
 }
 
 .template .image{
-    width: 20rem;
+    width: 100%;
+    max-width: 12.125rem;
+    margin: 0;
+    border-radius: 0.3125rem;
 }
 
 .template .image img{
@@ -29,11 +34,20 @@
 .template .info .fields {
     display: flex;
     gap: 1rem;
+    max-width: 100%;
+}
+
+.fields span{
+    font-size: 0.875rem;
 }
 
 @media screen and (max-width: 950px){
     .template .info .fields {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .template .image{
+        max-width: 6.8125rem;
     }
 }

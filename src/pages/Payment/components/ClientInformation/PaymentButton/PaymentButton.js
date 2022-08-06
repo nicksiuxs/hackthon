@@ -22,6 +22,7 @@ const PaymentButton = () => {
     if (paid) {
       navigate('/success');
     }
+    // eslint-disable-next-line
   }, [paid]);
 
   const { doPayment } = usePayRental();

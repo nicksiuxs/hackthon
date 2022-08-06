@@ -3,7 +3,7 @@ import Calendar from 'rsuite/Calendar';
 import { days, months } from '../../../../utils/formatDates';
 import "./CustomCalendar.css"
 
-const CustomCalendar = ({ handleOnChangeCalendar }) => {
+const CustomCalendar = ({ value, handleOnChangeCalendar }) => {
 
     useEffect(() => {
         handleOnChange(new Date())
@@ -15,8 +15,15 @@ const CustomCalendar = ({ handleOnChangeCalendar }) => {
         handleOnChangeCalendar(newDate)
     }
 
+    const hanldeValue = (date) => {
+        if (!date) {
+            return new Date(Date.now())
+        }
+        return new Date(date)
+    }
+
     return (
-        <Calendar compact bordered onSelect={handleOnChange} menuautowidth="true" />
+        <Calendar compact bordered onSelect={handleOnChange} menuautowidth="true" value={hanldeValue(value)} />
     )
 }
 

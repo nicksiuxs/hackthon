@@ -14,6 +14,7 @@ const Step = ({ label, stepNumber }) => {
   const isSelected = step === stepNumber;
   const isCompleted = step > stepNumber;
   const { handleStep } = useHandleStep({ newStep: stepNumber, dispatch });
+  
   return (
     <div className="step-container">
       <div className="indicator">

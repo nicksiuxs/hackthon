@@ -15,7 +15,7 @@ const appInitialState = {
         error: null
     },
     template: {},
-    step: 1,
+    step: 2,
     labels: labels,
     hostInformation: {
         firstName: "",
@@ -66,6 +66,9 @@ const appReducer = (state, action) => {
         }
         case TYPES.REQUEST_TEMPLATES_ERROR: {
             return { ...state, templates: { ...state.templates, isFetching: false, error: action.payload } }
+        }
+        case TYPES.UPDATE_HOST_INFORMATION: {
+            return { ...state, hostInformation: action.payload }
         }
         default:
             return state;

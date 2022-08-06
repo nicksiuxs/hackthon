@@ -14,6 +14,7 @@ import Header from "./components/Header/Header";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import BackNavigation from "./components/BackNavigation/BackNavigation";
+import Protected from "./Protected";
 
 function App() {
   return (
@@ -26,8 +27,20 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route
+            path="/register"
+            element={
+              <Protected>
+                <Register />
+              </Protected>
+            } />
+          <Route
+            path="/payment"
+            element={
+              <Protected>
+                <Payment />
+              </Protected>
+            } />
         </Routes>
       </main>
       <Footer />

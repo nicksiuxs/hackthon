@@ -13,7 +13,7 @@ const Step = ({ label, stepNumber }) => {
 
   const isSelected = step === stepNumber;
   const isCompleted = step > stepNumber;
-  const { handleStep } = useHandleStep({ newStep: stepNumber, dispatch });
+  const { handleStep, couldMoveTo } = useHandleStep({ newStep: stepNumber, dispatch });
   
   return (
     <div className="step-container">
@@ -24,6 +24,7 @@ const Step = ({ label, stepNumber }) => {
           />
         )}
         <button
+          disabled={!couldMoveTo}
           onClick={() => handleStep()}
           className={`step ${
             isSelected ? "-selected" : isCompleted ? "-completed" : ""

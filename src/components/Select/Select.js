@@ -10,4 +10,8 @@ const Select = ({ name, options, value, textDefault, handleOnChange }) => {
     )
 }
 
+Select.defaultProps = {
+    handleOnChange: () => {}
+}
+
 export default Select

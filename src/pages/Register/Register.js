@@ -1,14 +1,12 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import HostInformation from './components/HostInformation/HostInformation'
+import TemplateInformation from './components/TemplateInformation/TemplateInformation'
+
 const Register = () => {
     return (
-        <div>
-            <h1>Register</h1>
-            <NavLink
-                to="/payment"
-            >
-                Payment
-            </NavLink>
+        <div className='panel-container'>
+            <TemplateInformation />
+            <HostInformation />
         </div>
     )
 }

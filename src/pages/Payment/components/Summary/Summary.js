@@ -6,7 +6,7 @@ import { formatDate, getTotalHours } from "../../../../utils/formatDates";
 
 const Summary = () => {
   const {
-    state: { labels, summary }
+    state: { labels, summary },
   } = useAppContext();
 
   const Totals = () => (
@@ -23,11 +23,16 @@ const Summary = () => {
   );
 
   const RentalInfo = () => {
-    const { template: { startDate, endDate, location, cost } } = summary;
+    const {
+      template: { startDate, endDate, location, cost },
+    } = summary;
 
     return (
-      < div className="rental" >
-        <p>{formatDate(startDate, endDate)}</p>
+      <div className="rental">
+        <div className="date">
+          <img src="/icons/calendar.svg" alt="calendar" />
+          <p>{formatDate(startDate, endDate)}</p>
+        </div>
         <div className="item">
           <span>Street 54</span>
         </div>
@@ -39,15 +44,15 @@ const Summary = () => {
           <span>{labels.capacity + " " + location.capacity}</span>
           <span>$0.0</span>
         </div>
-      </div >
-    )
-  }
+      </div>
+    );
+  };
 
   return (
-    <div className="panel panel-30">
+    <div className="panel panel-30 summary">
       <Discounts />
       <div className="summary">
-        <h2>{labels.summary}</h2>
+        <h3 className="title">{labels.summary}</h3>
         <RentalInfo />
         <Totals />
       </div>

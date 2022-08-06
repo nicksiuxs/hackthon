@@ -22,7 +22,7 @@ const CardInformation = () => {
 
   return (
     <div>
-        <h2>{labels.card_information}</h2>
+        <h2 className='title'>{labels.card_information}</h2>
         <form>
           <Input id={"cardholderName"} value={cardholderName} label={labels.cardhold_name} handleOnchange={onChange} />
           <Input id={"cardNumber"} value={cardNumber} type="number" label={labels.card_number} handleOnchange={onChange} />

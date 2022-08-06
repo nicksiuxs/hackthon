@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Calendar from 'rsuite/Calendar';
-import { days, months } from '../../../../utils/formatDates';
+import { months } from '../../../../utils/formatDates';
 import "./CustomCalendar.css"
 
 const CustomCalendar = ({ value, handleOnChangeCalendar }) => {
@@ -11,7 +11,7 @@ const CustomCalendar = ({ value, handleOnChangeCalendar }) => {
     }, [])
 
     const handleOnChange = (date) => {
-        const newDate = `${date.getFullYear()}-${months[date.getMonth()]}-${days[date.getDate() - 1]}`
+        const newDate = `${date.getFullYear()}-${months[date.getMonth()]}-${date.getDate()}`
         handleOnChangeCalendar(newDate)
     }
 

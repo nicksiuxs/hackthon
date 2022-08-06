@@ -14,14 +14,14 @@ const ListOfTemplates = () => {
         <>
             {
                 listTemplates.map(template => {
-                    const { Id, cost, richDescription, location, startDate, endDate } = template;
+                    const { Id, cost, description, location, startDate, endDate } = template;
                     return <Template
                         key={Id}
                         Id={Id}
                         timeFrame={formatDate(startDate, endDate)}
                         capacity={location.capacity}
                         price={cost}
-                        description={richDescription}
+                        description={description}
                     />
                 })
             }

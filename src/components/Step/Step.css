@@ -42,8 +42,16 @@
     background-color: var(--selected-bg-button);
 }
 
+.indicator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .2rem;
+}
+
+/* bar styles */ 
 .bar {
-    width: 18rem;
+    width: 16rem;
     height: 2px;
     background-color: var(--defaul-bg-button);
 }
@@ -51,9 +59,21 @@
     background-color: var(--selected-bg-button);
 }
 
-.indicator {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: .2rem;
+/* breackpoints */
+@media screen and (max-width: 400px) {
+    .bar {
+        width: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bar {
+        width: 5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .bar {
+        width: 9rem;
+    }
 }

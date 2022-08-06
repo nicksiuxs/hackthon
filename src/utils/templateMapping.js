@@ -11,6 +11,7 @@ const templateMapping = (sObject) => {
         category: sfRentalEvent.Auctifera__Rental_Type__c,
         cost: sfRentalEvent.Auctifera__Minimum_Deposit_Amount__c,
         richDescription: sfRentalEvent.Auctifera__Online_Description__c,
+        description: sfRentalEvent.Auctifera__Description__c,
         location: {
             Id: sfLocation.Id,
             capacity: sfLocation.Auctifera__Capacity__c

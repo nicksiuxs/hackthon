@@ -22,6 +22,12 @@
     margin-bottom: 0.688rem;
 }
 
+.cost {
+    display: block;
+    font-size: 1.125rem;
+    margin: 1rem 0;
+}
+
 .capacity {
     display: flex;
     align-items: center;
@@ -31,4 +37,5 @@
 .section-title {
     color: #707070;
     display: block;
+    font-weight: 400;
 }

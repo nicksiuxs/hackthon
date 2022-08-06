@@ -35,7 +35,7 @@ const TemplateInformation = () => {
           {labels.capacity + " " + capacity}
         </div>
       </div>
-      <h3>{labels.cost + ": " + cost}</h3>
+      <span className="cost">{labels.cost + ": " + cost}</span>
       <div>
         <h3 className="section-title">{labels.description}</h3>
         <div dangerouslySetInnerHTML={{ __html: richDescription }} />

@@ -1,11 +1,20 @@
 import React from "react";
 import "./Template.css";
 import labels from "../../labels";
+import useAppContext from "../../customHooks/useAppContext";
+import TYPES from "../../reducers/types";
 
 const Template = (props) => {
-  const { timeFrame, capacity, price, description } = props;
+  const { Id, timeFrame, capacity, price, description } = props;
+
+  const { dispatch } = useAppContext()
+
+  const handleSelectTemplate = () => {
+    dispatch({ type: TYPES.SELECT_TEMPLATE, payload: Id })
+  }
+
   return (
-    <div className="template">
+    <button className="template" onClick={handleSelectTemplate}>
       <div className="image">
         <img src="/no-photo.png" alt="template img" />
       </div>
@@ -22,9 +31,9 @@ const Template = (props) => {
           <b>{labels.price} </b>
           {price}
         </p>
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }}></p>
       </div>
-    </div>
+    </button>
   );
 };
 

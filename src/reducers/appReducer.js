@@ -74,8 +74,12 @@ const appReducer = (state, action) => {
             return { ...state, payment: { ...state.payment, ...action.payload } }
         }
         case TYPES.UPDATE_FILTERS: {
-            console.log("entre")
             return { ...state, filter: { ...state.filter, ...action.payload } }
+        }
+        case TYPES.SELECT_TEMPLATE: {
+            const idTemplate = action.payload
+            const template = state.templates.listTemplates.find(template => template.Id === idTemplate)
+            return { ...state, template, step: 2 }
         }
         default:
             return state;

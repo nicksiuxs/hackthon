@@ -2,7 +2,7 @@ import React from "react";
 import "./Input.css";
 
 const Input = (props) => {
-  const { id, type, label, value, handleOnchange } = props;
+  const { id, type, label, value, handleOnchange, className } = props;
   return (
     <div className="input">
       <div>
@@ -10,6 +10,7 @@ const Input = (props) => {
         {label && <label htmlFor={id}>{label}</label>}
       </div>
       <input
+        className={className}
         id={id}
         name={id}
         type={type || "text"}

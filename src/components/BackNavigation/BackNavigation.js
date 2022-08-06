@@ -10,14 +10,14 @@ const BackNavigation = () => {
   } = useAppContext();
   const { handleStep } = useHandleStep({ newStep: step - 1, dispatch });
 
-  const stepName = [ 'Availability', 'Registration'];
+  const stepName = [labels.availability, labels.registration];
 
   return (
     <>
       {step > 1 && (
         <div className="back-navigation" onClick={() => handleStep()}>
           <img src="/icons/blue_arrow.svg" alt="back" />
-          { stepName[step - 2] }
+          {stepName[step - 2]}
         </div>
       )}
     </>

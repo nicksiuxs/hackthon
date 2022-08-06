@@ -1,0 +1,11 @@
+form.discount-form {
+    display: flex;
+    gap: 1.25rem;
+}
+
+form.discount-form input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #DCDBD9;
+    padding: 0 1rem;
+}

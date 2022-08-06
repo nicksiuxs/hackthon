@@ -21,6 +21,10 @@ button.btn {
     background-color: var(--selected-bg-button);
     border: none;
     color: #fff;
+    border-radius: 5px;
+}
+button.btn.-small {
+    height: 2.188rem;
 }
 
 .main-content {

@@ -1,9 +1,27 @@
+.panel.summary {
+    border-color: #F4F4F4;
+    background-color: #F4F4F4;
+}
+
 .rental {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border-top: 1px solid #C4C4C4;
     padding-top: 1rem;
+}
+
+.rental .date {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0;
+}
+
+.rental .date p {
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: #212121;
 }
 
 .rental .item {
@@ -14,6 +32,12 @@
     padding-left: 1rem;
 }
 
+.item .address {
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 0;
+}
+
 .totals {
     display: flex;
     flex-direction: column;
@@ -21,6 +45,7 @@
     gap: 1rem;
     border-top: 1px solid #C4C4C4;
     padding-top: 1rem;
+    margin-top: 1rem;
 }
 
 .totals .item {

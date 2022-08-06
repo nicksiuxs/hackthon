@@ -23,9 +23,12 @@ const Summary = () => {
 
   const RentalInfo = () => (
     <div className="rental">
-      <p>Tuesday April 8th, 2022 - 7:00am - 8:00am</p>
+      <div className="date">
+        <img src="/icons/calendar.svg" alt="calendar" />
+        <p>Tuesday April 8th, 2022 - 7:00am - 8:00am</p>
+      </div>
       <div className="item">
-        <span>Street 54</span>
+        <span className="address">Street 54</span>
       </div>
       <div className="item">
         <span>1 Hour</span>
@@ -39,10 +42,10 @@ const Summary = () => {
   )
 
   return (
-    <div className="panel panel-30">
+    <div className="panel panel-30 summary">
       <Discounts />
       <div className="summary">
-        <h2>{labels.summary}</h2>
+        <h3 className="title">{labels.summary}</h3>
         <RentalInfo />
         <Totals/>
       </div>

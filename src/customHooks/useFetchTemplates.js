@@ -1,7 +1,7 @@
 import TYPES from '../reducers/types';
-
 import fetchSalesforce from '../utils/callApi'
 import useAppContext from './useAppContext';
+import { templateMappingArray } from '../utils/templateMapping';
 
 const ENDPOINT = "/pos/v1/rentalTemplate";
 
@@ -17,7 +17,8 @@ const useFetchTemplates = () => {
         try {
             dispatch({ type: TYPES.REQUEST_TEMPLATES })
             const data = await fetchSalesforce(formatEndpoint());
-            dispatch({ type: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: data })
+            const mappedData = templateMappingArray(data);
+            dispatch({ type: TYPES.REQUEST_TEMPLATES_SUCCESS, payload: mappedData })
         } catch (e) {
             dispatch({ action: TYPES.REQUEST_TEMPLATES_ERROR, payload: e })
         }

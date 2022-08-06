@@ -4,6 +4,7 @@ import Select from '../../../../components/Select/Select';
 import useAppContext from '../../../../customHooks/useAppContext';
 import TYPES from '../../../../reducers/types';
 import "./AvailabilityFilters.css";
+import useFetchTemplates from '../../../../customHooks/useFetchTemplates';
 
 const AvailabilityFilters = () => {
   const { state: { labels, filter }, dispatch } = useAppContext();
@@ -15,6 +16,9 @@ const AvailabilityFilters = () => {
     }
     dispatch({ type: TYPES.UPDATE_FILTERS, payload: field });
   }
+
+  const { fetchTemplates } = useFetchTemplates()
+
   return (
     <div className='panel panel-50'>
       <div className='filter'>
@@ -37,6 +41,9 @@ const AvailabilityFilters = () => {
         <label htmlFor="capacity"><b>4.</b> {labels.number_of_guest}</label>
         <Input id={"capacity"} type="number" handleOnchange={handleOnChange} value={capacity} />
       </div>
+
+      <button onClick={() => fetchTemplates()}>magic</button>
+
     </div>
   )
 }

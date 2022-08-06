@@ -5,6 +5,7 @@ import useAppContext from '../../../../customHooks/useAppContext';
 import TYPES from '../../../../reducers/types';
 import "./AvailabilityFilters.css";
 import useFetchTemplates from '../../../../customHooks/useFetchTemplates';
+import CustomCalendar from '../CustomCalendar/CustomCalendar';
 
 const AvailabilityFilters = () => {
   const { state: { labels, filter }, dispatch } = useAppContext();
@@ -17,6 +18,10 @@ const AvailabilityFilters = () => {
     dispatch({ type: TYPES.UPDATE_FILTERS, payload: field });
   }
 
+  const handleOnChangeCalendar = (dateSelected) => {
+    dispatch({ type: TYPES.UPDATE_FILTERS, payload: { dateSelected } });
+  }
+
   const { fetchTemplates } = useFetchTemplates()
 
   return (
@@ -27,7 +32,7 @@ const AvailabilityFilters = () => {
       </div>
       <div className='filter'>
         <label htmlFor="dateSelected"><b>2.</b> {labels.select_date}</label>
-        <input type="date" id="dateSelected" name="dateSelected" onChange={handleOnChange} value={dateSelected} />
+        <CustomCalendar value={dateSelected} handleOnChangeCalendar={handleOnChangeCalendar} />
       </div>
       <div className='filter'>
         <label htmlFor="startDate"><b>3.</b> {labels.select_time_frame}</label>

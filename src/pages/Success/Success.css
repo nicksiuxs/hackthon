@@ -1,0 +1,29 @@
+.success-page {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: white;
+
+    padding: 3rem;
+    padding-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5;
+}
+
+.success-page .message {
+    display: inline;
+    text-align: center;
+}
+
+.success-page .continue {
+    display: inline;
+    color: var(--selected-bg-button);
+    text-decoration: underline;
+    cursor: pointer;
+}

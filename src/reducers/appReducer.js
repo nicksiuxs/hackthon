@@ -39,6 +39,9 @@ const appInitialState = {
         expDate: "",
         cvc: "",
         includeFee: false,
+        error: null,
+        isFetching: false,
+        paid: false,
     },
     summary: {
         template: null,
@@ -81,6 +84,18 @@ const appReducer = (state, action) => {
             const template = state.templates.listTemplates.find(template => template.Id === idTemplate)
             const newTotal = template.cost;
             return { ...state, template, step: 2, summary: { template, subtotal: newTotal, total: newTotal } }
+        }
+        case TYPES.PAY_RENTAL_EVENT: {
+            return { ...state, payment: { ...state.payment, isFetching: true }}
+        }
+        case TYPES.PAY_RENTAL_EVENT_SUCCESS: {
+            return { ...state, payment: { ...state.payment, isFetching: false, paid: true }}
+        }
+        case TYPES.PAY_RENTAL_EVENT_ERROR: {
+            return { ...state, payment: { ...state.payment, error: action.payload, paid: false }}
+        }
+        case TYPES.RESET_STATE: {
+            return appInitialState
         }
         default:
             return state;

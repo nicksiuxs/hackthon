@@ -35,6 +35,7 @@ const labels = {
     personal_information: "Personal information",
     phone: "Phone",
     price: "Price:",
+    reserve: "Reserve",
     registration: "Registration",
     search: "Search",
     security_details: "Security details",
@@ -49,6 +50,8 @@ const labels = {
     to: "to",
     total: "Total",
     zip: "Zip/Code",
+    successful_operation: "You just succesfully reserved event ",
+    continue_shopping: "Continue shopping"
 }
 
 export default labels

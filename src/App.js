@@ -15,6 +15,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import BackNavigation from "./components/BackNavigation/BackNavigation";
 import Protected from "./Protected";
+import Success from "./pages/Success/Success";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/success" element={<Success />} />
           <Route
             path="/register"
             element={

@@ -68,7 +68,7 @@ const appReducer = (state, action) => {
             return { ...state, templates: { ...state.templates, isFetching: false, error: action.payload } }
         }
         case TYPES.UPDATE_HOST_INFORMATION: {
-            return { ...state, hostInformation: action.payload }
+            return { ...state, hostInformation: action.payload, step: 3 }
         }
         case TYPES.UPDATE_PAYMENT_INFORMATION: {
             return { ...state, payment: { ...state.payment, ...action.payload } }

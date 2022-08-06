@@ -28,7 +28,7 @@ const PersonalInformation = () => {
 
   return (
     <div>
-        <h2>{labels.personal_information}</h2>
+        <h2 className='title'>{labels.personal_information}</h2>
         <form>
             <Input id={"firstName"} value={firstName} label={labels.first_name} handleOnchange={onChange} />
             <Input id={"lastName"} value={lastName} label={labels.last_name} handleOnchange={onChange} />

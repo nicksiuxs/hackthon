@@ -10,7 +10,7 @@ const ClientInformation = () => {
     <div className='panel panel-70'>
       <PersonalInformation />
       <CardInformation />
-      <button>Pay ${summary.total}</button>
+      <button className='btn'>Pay ${summary.total}</button>
     </div>
   )
 }

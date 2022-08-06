@@ -36,6 +36,7 @@ const labels = {
     phone: "Phone",
     price: "Price:",
     registration: "Registration",
+    search: "Search",
     security_details: "Security details",
     select_category: "Select a category according to your activity",
     select_date: "Select the date you want for your activity",

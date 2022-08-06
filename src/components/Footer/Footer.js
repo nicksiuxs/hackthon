@@ -1,13 +1,22 @@
 import React from 'react';
 import './Footer.css';
+import Select from '../Select/Select';
+import useAppContext from '../../customHooks/useAppContext';
 
 const Footer = () => {
+  const { state: { labels }} = useAppContext();
+
   return (
     <footer className='footer'>
       <span>2022 Veevart Museum</span>
-      <select name="language">
-        <option value="1">English</option>
-      </select>
+      <div className='language-group'>
+        {labels.language}
+        <Select
+          name="multilanguage"
+          options={['Spanish', 'English']}
+          value={'English'}
+        />
+      </div>
     </footer>
   )
 }

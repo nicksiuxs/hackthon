@@ -19,7 +19,14 @@ const CustomCalendar = ({ value, handleOnChangeCalendar }) => {
         if (!date) {
             return new Date(Date.now())
         }
-        return new Date(date)
+        let newDate = date;
+
+        if (date.split("-")[2] > 9) {
+            const arrDate = newDate.split("-")
+            newDate = `${arrDate[0]}-${arrDate[1]}-${parseInt(arrDate[2]) + 1}`;
+        }
+
+        return new Date(newDate)
     }
 
     return (

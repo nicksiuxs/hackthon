@@ -3,10 +3,11 @@ import React from 'react';
 import './Stepper.css';
 // components
 import Step from '../Step/Step';
-import labels from '../../labels';
+import useAppContext from '../../customHooks/useAppContext';
 
 
 const Stepper = () => {
+  const { state: { labels } } = useAppContext();
   return (
     <div className='stepper'>
       <Step label={labels.check_availability} stepNumber={1} />

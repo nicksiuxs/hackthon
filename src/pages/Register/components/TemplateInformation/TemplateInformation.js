@@ -11,7 +11,7 @@ const TemplateInformation = () => {
   const {
     startDate,
     endDate,
-    location: { capacity },
+    location: { capacity, name },
     cost,
     richDescription,
     disclaimers,
@@ -21,11 +21,11 @@ const TemplateInformation = () => {
   return (
     <div className="panel panel-30">
       <figure className="template-image">
-        <img src={img || "/no-photo.png"} alt="package information" />
+        <img src={img || "/default_image.png"} alt="package information" />
       </figure>
       <h2 className="title">{labels.package_information}</h2>
       <div>
-        <div className="address">{"Street 54-23"}</div>
+        <div className="address">{name}</div>
         <div className="date">
           {formatDate(startDate, endDate) ||
             "Tuesday April 8th, 2022 - 8:00am - 9:00am"}{" "}
@@ -35,7 +35,7 @@ const TemplateInformation = () => {
           {labels.capacity + " " + capacity}
         </div>
       </div>
-      <span className="cost">{labels.cost + ": " + cost}</span>
+      <span className="cost">{labels.cost + ": $" + cost}</span>
       <div>
         <h3 className="section-title">{labels.description}</h3>
         <div dangerouslySetInnerHTML={{ __html: richDescription }} />

@@ -14,10 +14,13 @@ const templateMapping = (sObject) => {
         description: sfRentalEvent.Auctifera__Description__c,
         location: {
             Id: sfLocation.Id,
-            capacity: sfLocation.Auctifera__Capacity__c
+            capacity: sfLocation.Auctifera__Capacity__c,
+            name: sfLocation.Name
         },
         startDate: new Date(sObject.rentalStartDate),
         endDate: new Date(sObject.rentalEndDate),
+        disclaimers: sfRentalEvent.Auctifera__Disclaimers__c,
+        insurance: sfRentalEvent.Auctifera__Insurance_Information__c
     }
     return rentalTemplate;
 }
@@ -30,5 +33,5 @@ const templateMappingArray = (sObjects) => {
     return sObjects.map(templateMapping);
 }
 
-export {templateMappingArray};
+export { templateMappingArray };
 export default templateMapping;

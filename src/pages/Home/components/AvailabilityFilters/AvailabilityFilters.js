@@ -39,7 +39,12 @@ const AvailabilityFilters = () => {
     <form className='panel panel-50' onSubmit={handleOnSubmit}>
       <div className='filter'>
         <label htmlFor="category"><b>1.</b> {labels.select_category}</label>
-        <Select name="category" options={["Birthday Party", "Wedding", "Reception only"]} value={category} textDefault="Select category" handleOnChange={handleOnChange} required />
+        <Select
+          name="category"
+          options={["Birthday Party", "Wedding", "Reception only"]}
+          value={category}
+          textDefault={labels.select_category_input}
+          handleOnChange={handleOnChange} required />
         {!isValidate && category === "" ? <span className="error-message">{labels.error_select_category}</span> : null}
       </div>
       <div className='filter'>

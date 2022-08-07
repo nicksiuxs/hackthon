@@ -97,6 +97,9 @@ const appReducer = (state, action) => {
         case TYPES.RESET_STATE: {
             return appInitialState
         }
+        case TYPES.CHANGE_LANGUAGE: {
+            return { ...state, labels: action.payload }
+        }
         default:
             return state;
     }

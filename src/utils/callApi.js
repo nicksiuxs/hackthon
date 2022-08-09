@@ -1,5 +1,5 @@
 const salesforceURL = 'https://data-customization-3965-dev-ed.my.salesforce.com/services/apexrest/Auctifera';
-const accessToken = '00D54000000mEHk!AR0AQCndj5PLRIUGGFwDjLfCSh0q7ZR8Ut_7XEBvDeAvvzjxaf5HHNczNmUuDK_LDVcgFEiqgydi54FqAJR85a42wiywH0yK';
+const accessToken = '00D54000000mEHk!AR0AQJsRpZP114R0YUBBAANNBtSPuWEqxyJ9Psd9WtxsYtETFDSNULi9vSOQSV7xbSBNeHGdpTIhOPsxXueELbrBT5A_XmSC';
 
 /**
  * fetchs data from Salesforce, require error handling
